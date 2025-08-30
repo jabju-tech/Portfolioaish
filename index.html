@@ -4,7 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aishwarya S – Portfolio</title>
+
+  <!-- ✅ Google Analytics Script -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NH0J997NFY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NH0J997NFY');
+  </script>
+
   <style>
+    /* ✅ Global body styling */
     body {
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
@@ -13,10 +24,14 @@
       scroll-behavior: smooth;
       transition: background-color 0.3s, color 0.3s;
     }
+
+    /* ✅ Text selection style */
     ::selection {
       background: #4a90e2;
       color: #fff;
     }
+
+    /* ✅ Header section */
     header {
       text-align: center;
       padding: 80px 20px 40px;
@@ -34,6 +49,8 @@
       border: 3px solid #4a90e2;
       object-fit: cover;
     }
+
+    /* ✅ Sidebar Navigation */
     .sidebar {
       height: 100%;
       width: 0;
@@ -57,6 +74,8 @@
     .sidebar a:hover {
       background-color: #343541;
     }
+
+    /* ✅ Sidebar toggle button */
     .togglebtn {
       font-size: 1.6em;
       cursor: pointer;
@@ -71,6 +90,8 @@
     .togglebtn.white {
       color: #fff !important;
     }
+
+    /* ✅ Dark/Light mode button */
     .mode-toggle {
       font-size: 1.6em;
       cursor: pointer;
@@ -82,6 +103,8 @@
       right: 15px;
       z-index: 1100;
     }
+
+    /* ✅ Section layout */
     section {
       max-width: 700px;
       margin: 40px auto;
@@ -91,11 +114,15 @@
       border-bottom: 1px solid #e5e5e5;
       padding-bottom: 30px;
     }
+
+    /* ✅ Headings */
     h2 {
       font-size: 1.5em;
       margin-bottom: 15px;
       color: #4a90e2;
     }
+
+    /* ✅ Card box style */
     .card {
       margin-bottom: 20px;
       padding: 15px;
@@ -104,6 +131,8 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       transition: background-color 0.3s, color 0.3s;
     }
+
+    /* ✅ Buttons */
     .btn {
       display: inline-block;
       margin: 10px 8px 0 0;
@@ -120,6 +149,8 @@
     .btn:hover {
       background-color: #3a78c2;
     }
+
+    /* ✅ Contact section links */
     #contact {
       text-align: left;
     }
@@ -132,6 +163,8 @@
       color: #cf6f1b;
       text-decoration: underline;
     }
+
+    /* ✅ Dark mode styles */
     body.dark {
       background-color: #343541;
       color: #ececf1;
@@ -167,6 +200,7 @@
 </head>
 <body class="dark">
 
+  <!-- ✅ Sidebar Navigation -->
   <div id="mySidebar" class="sidebar">
     <a href="#about" onclick="closeNav()">About</a>
     <a href="#skills" onclick="closeNav()">Skills</a>
@@ -176,20 +210,26 @@
     <a href="#contact" onclick="closeNav()">Contact</a>
   </div>
 
+  <!-- ✅ Sidebar Toggle Button -->
   <button class="togglebtn" onclick="toggleNav()">☰</button>
+
+  <!-- ✅ Dark/Light Mode Toggle -->
   <button class="mode-toggle" onclick="toggleMode()">☀️</button>
 
+  <!-- ✅ Header -->
   <header>
     <img src="profile.jpg" alt="Profile Picture">
     <h1>Aishwarya S</h1>
   </header>
 
+  <!-- ✅ About Section -->
   <section id="about">
     <h2>About</h2>
     <p>I am Aishwarya S—a curious mind exploring the intersection of narrative, science, and design.  
        I have completed my UG at <strong>Christ Academy Institute for Advanced Studies</strong>.</p>
   </section>
 
+  <!-- ✅ Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="card">Web Development – HTML, CSS, JavaScript</div>
@@ -198,6 +238,7 @@
     <div class="card">UI/UX Design – Figma, Adobe XD</div>
   </section>
 
+  <!-- ✅ Languages Section -->
   <section id="languages">
     <h2>Languages</h2>
     <div class="card">Fluent in English</div>
@@ -205,6 +246,7 @@
     <div class="card">Fluent in Kannada</div>
   </section>
 
+  <!-- ✅ Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="card">
@@ -221,22 +263,25 @@
     </div>
   </section>
 
+  <!-- ✅ Resume Section -->
   <section id="resume">
     <h2>Resume</h2>
-    <a class="btn" href="resume.pdf" target="_blank">📄 View Resume</a>
-    <a class="btn" href="resume.pdf" download>⬇️ Download Resume</a>
+    <a class="btn" href="resume.pdf" target="_blank" onclick="trackEvent('Resume', 'View', 'Resume View')">📄 View Resume</a>
+    <a class="btn" href="resume.pdf" download onclick="trackEvent('Resume', 'Download', 'Resume Download')">⬇️ Download Resume</a>
   </section>
 
+  <!-- ✅ Contact Section -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>✉️ Email: <a href="mailto:aishwaryasuresh1972@gmail.com">aishwaryasuresh1972@gmail.com</a></p>
-    <p>💬 WhatsApp: <a href="https://wa.me/6364696975" target="_blank">6364696975</a></p>
+    <p>✉️ Email: <a href="mailto:aishwaryasuresh1972@gmail.com" onclick="trackEvent('Contact', 'Click', 'Email')">aishwaryasuresh1972@gmail.com</a></p>
+    <p>💬 WhatsApp: <a href="https://wa.me/6364696975" target="_blank" onclick="trackEvent('Contact', 'Click', 'WhatsApp')">6364696975</a></p>
     <p>🔗 LinkedIn: 
-      <a href="https://linkedin.com/in/aishwarya-suresh-7a68072a0" target="_blank">Aishwarya S Profile</a>
+      <a href="https://linkedin.com/in/aishwarya-suresh-7a68072a0" target="_blank" onclick="trackEvent('Contact', 'Click', 'LinkedIn')">Aishwarya S Profile</a>
     </p>
   </section>
 
   <script>
+    /* ✅ Sidebar Toggle Function */
     function toggleNav() {
       const sidebar = document.getElementById("mySidebar");
       const btn = document.querySelector(".togglebtn");
@@ -250,12 +295,16 @@
         btn.classList.add("white");
       }
     }
+
+    /* ✅ Close Sidebar Function */
     function closeNav() {
       document.getElementById("mySidebar").style.width = "0";
       const btn = document.querySelector(".togglebtn");
       btn.textContent = "☰";
       btn.classList.remove("white");
     }
+
+    /* ✅ Dark/Light Mode Toggle Function */
     function toggleMode() {
       document.body.classList.toggle("dark");
       const btn = document.querySelector(".mode-toggle");
@@ -265,8 +314,15 @@
         btn.textContent = "🌙";
       }
     }
+
+    /* ✅ Google Analytics Custom Event Tracking */
+    function trackEvent(category, action, label) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': label
+      });
+    }
   </script>
 
 </body>
 </html>
-
